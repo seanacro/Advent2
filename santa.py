@@ -10,7 +10,6 @@ session = requests.Session()
 while int(key) < 100:
     url = "http://%s:8000/api/%s" % (ip, str(key))
     r = session.get(url)
-    content = r.text
     output = r.json()
     print(str(output['item_id']) + '\t' + output['q'])
     key += 2
